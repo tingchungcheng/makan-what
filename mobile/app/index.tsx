@@ -44,7 +44,8 @@ const restaurants = [
 type IconName = string;
 
 function Icon({ name, size = 18, color = COLORS.ink }: { name: IconName; size?: number; color?: string }) {
-  return <Feather name={name as React.ComponentProps<typeof Feather>['name']} size={size} color={color} />;
+  const featherName = name === 'sparkles' ? 'star' : name;
+  return <Feather name={featherName as React.ComponentProps<typeof Feather>['name']} size={size} color={color} />;
 }
 
 function GlassCard({ children, style }: { children: React.ReactNode; style?: object }) {
